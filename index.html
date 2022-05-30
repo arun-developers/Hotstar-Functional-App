@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins&family=Roboto&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .navbar {
+            width: 100%;
+            height: 60px;
+            /* border: 1px solid black; */
+            display: flex;
+            font-family: "Roboto", "HelveticaNeue-Light", sans-serif;
+            background-color: rgba(51, 48, 42, 0.897);
+            color: white;
+
+        }
+
+        #container {
+            width: 100%;
+            /* border: 2px solid green; */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            font-family: "Roboto", "HelveticaNeue-Light", sans-serif;
+            justify-content: space-between;
+            /* margin-top: 10px; */
+            background-color: rgb(66, 161, 103);
+            color: white;
+        }
+
+        .infoDiv {
+            width: 98%;
+            /* border: 1px solid red; */
+            margin-top: 5px;
+            margin-top: 5px;
+            box-shadow: 0px 21px 35px rgb(180 185 193 / 29%);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            box-sizing: border-box;
+            background-color: rgba(51, 48, 42, 0.897);
+            line-height: 14px;
+
+        }
+
+        .movieImage {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height: 250px;
+        }
+
+        h1 {
+            margin: auto;
+            margin-left: 15px;
+        }
+
+        input {
+            width: 450px;
+            height: 25px;
+            margin-right: 10px;
+            margin-top: 17px;
+            border: transparent;
+        }
+
+        #searchBox {
+            width: 453px;
+            height: 300px;
+            overflow-x: scroll;
+            overflow-x: hidden;
+        }
+
+        .searchImg {
+            width: 30%;
+            height: 100%;
+        }
+
+        .searchBoxdiv {
+            display: flex;
+            width: 100%;
+            height: 103px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            background-color: rgba(51, 48, 42, 0.897);
+            color: white;
+            border: 1px solid rgba(231, 231, 221, 0.87);
+        }
+
+        .nameYear {
+            width: 70%;
+            height: 100px;
+            /* border: 1px rgb(240, 232, 232); */
+            line-height: 10px;
+        }
+
+        button {
+            height: 30px;
+            background-color: rgba(63, 196, 74, 0.884);
+            color: white;
+            cursor: pointer;
+            border: transparent;
+
+        }
+
+        #highrating {
+            margin-right: 10px;
+        }
+
+        #subscribe {
+            margin-top: 15px;
+            width: 100px;
+            margin-right: 10px;
+            font-size: 19px;
+            background-color: rgba(199, 48, 37, 0.932);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>MOVIESTAR</h1>
+        <p> Sort By
+            <button onclick="fetchAPILow(sortByLow)">Low Rating</button>
+            <button onclick="fetchAPIHigh(sortByHigh)" id="highrating">High Rating</button>
+        <div>
+            <input oninput="DebounceFunction(main,1000)" type="text" id="searchMovei" placeholder="Search Movie...">
+            <div id="searchBox"></div>
+        </div>
+        <button onclick="addDataStorage()" id="subscribe">Subscribe</button>
+
+        </p>
+    </div>
+
+    <div id="container"></div>
+
+</body>
+
+</html>
+<script src="index.js"></script>
